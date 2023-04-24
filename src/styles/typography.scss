@@ -1,0 +1,14 @@
+@mixin h1 {
+  font-weight: 600;
+  font-size: 52px;
+}
+
+@mixin h2 {
+  font-weight: 600;
+  font-size: 44px;
+}
+
+@mixin body {
+  font-weight: 400;
+  font-size: 14px;
+}
