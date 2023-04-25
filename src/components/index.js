@@ -8,8 +8,7 @@ import AddToDoItemForm from "./molecules/AddToDoItemForm/AddToDoItemForm";
 import FilterButtonGroup from "./molecules/FilterButtonGroup/FilterButtonGroup";
 
 import ToDoList from "./organisms/ToDoList/ToDoList";
-
-import ListWithForm from "./templates/ListWithForm/ListWithForm";
+import ListWithForm from "./organisms/ListWithForm/ListWithForm";
 
 export {
   Button,
