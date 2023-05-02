@@ -1,0 +1,27 @@
+@import "../../../assets/styles/typography.scss";
+
+.wrapper {
+  width: fit-content;
+}
+
+input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+
+  &[type="radio"]:checked + label {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+}
+
+label {
+  z-index: 90;
+  padding: 0 0.5rem;
+  border: 2px solid var(--color-dark);
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-grey);
+  }
+}
