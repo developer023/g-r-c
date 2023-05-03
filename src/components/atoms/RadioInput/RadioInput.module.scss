@@ -1,17 +1,7 @@
-@import "../../../assets/styles/typography.scss";
+@import "../../../assets/styles/typography";
 
 .wrapper {
   width: fit-content;
-}
-
-input[type="radio"] {
-  opacity: 0.01;
-  z-index: 100;
-
-  &[type="radio"]:checked + label {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-  }
 }
 
 label {
@@ -23,5 +13,15 @@ label {
 
   &:hover {
     background-color: var(--color-grey);
+  }
+}
+
+input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+
+  &[type="radio"]:checked + label {
+    background-color: var(--color-dark);
+    color: var(--color-white);
   }
 }

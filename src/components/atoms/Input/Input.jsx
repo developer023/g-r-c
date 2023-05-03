@@ -1,6 +1,8 @@
-import styles from "./Input.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Input.module.scss';
 
-const Input = ({ placeholder, value, onChange }) => {
+function Input({ placeholder, value, onChange }) {
   return (
     <input
       className={styles.input}
@@ -9,6 +11,12 @@ const Input = ({ placeholder, value, onChange }) => {
       onChange={onChange}
     />
   );
-};
+}
 
 export default Input;
+
+Input.propTypes = {
+  placeholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
