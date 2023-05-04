@@ -1,6 +1,8 @@
-import styles from "./Checkbox.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Checkbox.module.scss';
 
-const Checkbox = ({ checked, onChange }) => {
+function Checkbox({ checked, onChange }) {
   return (
     <input
       type="checkbox"
@@ -9,6 +11,11 @@ const Checkbox = ({ checked, onChange }) => {
       onChange={onChange}
     />
   );
-};
+}
 
 export default Checkbox;
+
+Checkbox.propTypes = {
+  checked: PropTypes.bool.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

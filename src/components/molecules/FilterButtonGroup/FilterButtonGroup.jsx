@@ -1,17 +1,21 @@
-import { useSelector } from "react-redux";
-import { getFilterSelector } from "redux/todo/selectors";
-import { RadioInput } from "components";
-import styles from "./FilterButtonGroup.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import { getFilterSelector } from 'redux/todo/selectors';
+import { RadioInput } from 'components';
+import styles from './FilterButtonGroup.module.scss';
 
-const FilterButtonGroup = ({ onChange }) => {
-  const filter = useSelector(getFilterSelector);
+function FilterButtonGroup({ onChange }) {
+  const filterState = useSelector(getFilterSelector);
+  const filterStorage = JSON.parse(localStorage.getItem('filter'));
+  const filter = filterStorage || filterState;
 
   return (
-    <div className={styles.group}>
+    <div className={styles.group} data-testid="filter-button-group">
       <RadioInput
         id="all"
         name="filter"
-        checked={filter === "all"}
+        checked={filter === 'all'}
         onChange={onChange}
       >
         All
@@ -19,7 +23,7 @@ const FilterButtonGroup = ({ onChange }) => {
       <RadioInput
         id="active"
         name="filter"
-        checked={filter === "active"}
+        checked={filter === 'active'}
         onChange={onChange}
       >
         Active
@@ -27,13 +31,17 @@ const FilterButtonGroup = ({ onChange }) => {
       <RadioInput
         id="completed"
         name="filter"
-        checked={filter === "completed"}
+        checked={filter === 'completed'}
         onChange={onChange}
       >
         Completed
       </RadioInput>
     </div>
   );
-};
+}
 
 export default FilterButtonGroup;
+
+FilterButtonGroup.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};

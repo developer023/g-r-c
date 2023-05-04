@@ -1,24 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { filterList } from "./helper";
+import { createSlice } from '@reduxjs/toolkit';
+import filterList from './helper';
 
 const todoInitialState = {
-  data: [
-    {
-      id: 1,
-      description: "Todo 1 description",
-      isCompleted: false,
-    },
-  ],
-  filter: "all",
+  data: [],
+  filter: 'all',
   filteredData: [],
 };
 
 const todoSlice = createSlice({
-  name: "TODO",
+  name: 'TODO',
   initialState: todoInitialState,
   reducers: {
     getFilteredData: (state, { payload }) => {
-      state.filteredData = filterList(payload, state.filter);
+      const data = JSON.parse(localStorage.getItem('data')) || payload;
+      const filter = JSON.parse(localStorage.getItem('filter')) || state.filter;
+      state.filteredData = filterList(data, filter);
     },
     addItem: (state, { payload }) => {
       state.data.push({
@@ -26,9 +22,11 @@ const todoSlice = createSlice({
         description: payload,
         isCompleted: false,
       });
+      localStorage.setItem('data', JSON.stringify(state.data));
     },
     deleteItem: (state, { payload }) => {
       state.data = state.data.filter((item) => item.id !== payload);
+      localStorage.setItem('data', JSON.stringify(state.data));
     },
     setCompleteState: (state, { payload }) => {
       state.data = state.data.map((item) => {
@@ -40,10 +38,12 @@ const todoSlice = createSlice({
         }
         return item;
       });
+      localStorage.setItem('data', JSON.stringify(state.data));
     },
     setFilter: (state, { payload }) => {
       state.filter = payload;
       state.filteredData = filterList(state.data, payload);
+      localStorage.setItem('filter', JSON.stringify(payload));
     },
   },
 });

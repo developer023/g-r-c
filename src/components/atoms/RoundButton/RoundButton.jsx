@@ -1,9 +1,18 @@
-import styles from "./RoundButton.module.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './RoundButton.module.scss';
 
-const RoundButton = ({ children, onClick }) => (
-  <button className={styles.button} onClick={onClick}>
-    {children}
-  </button>
-);
+function RoundButton({ children, onClick }) {
+  return (
+    <button className={styles.button} type="button" onClick={onClick}>
+      {children}
+    </button>
+  );
+}
 
 export default RoundButton;
+
+RoundButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired,
+};

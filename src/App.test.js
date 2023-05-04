@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { screen } from '@testing-library/react';
+import renderWithProviders from 'utils/utils-for-tests';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App.js component', () => {
+  it('should render App component', () => {
+    const tree = renderWithProviders(<App />);
+    const title = screen.getByText(/ToDo/i);
+
+    expect(title).toBeInTheDocument();
+    expect(tree).toMatchSnapshot();
+  });
 });

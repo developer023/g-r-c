@@ -14,3 +14,7 @@ The site is live at https://developer023.github.io/g-r-c/
 4. 0.5h - Adding interactivity with Redux Toolkit - State
 5. 2h - Adding interactivity with Redux Toolkit - Actions Add/Checck/Delete
 6. 1h - 2h - Adding interactivity with Redux Toolkit - Getters filters
+7. 1h - LocalStorage
+8. 3h - EsLint, Prettier, Husky, Stylelint
+9. 4h - Unit tests - snapshot, coverage
+10. 2h - Unit tests - components

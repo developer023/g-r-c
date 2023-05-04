@@ -1,12 +1,14 @@
-export const filterList = (list, filter) => {
+const filterList = (list, filter) => {
   switch (filter) {
-    case "all":
+    case 'all':
       return list;
-    case "completed":
+    case 'completed':
       return list.filter((item) => item.isCompleted);
-    case "active":
+    case 'active':
       return list.filter((item) => !item.isCompleted);
     default:
       return list;
   }
 };
+
+export default filterList;
