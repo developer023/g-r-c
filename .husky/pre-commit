@@ -1,8 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx eslint --fix "**/*.jsx"
-npx eslint "**/*.jsx"
-npx stylelint "**/*.scss"
-npm run build
-
