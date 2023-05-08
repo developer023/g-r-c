@@ -18,3 +18,5 @@ The site is live at https://developer023.github.io/g-r-c/
 8. 3h - EsLint, Prettier, Husky, Stylelint
 9. 4h - Unit tests - snapshot, coverage
 10. 2h - Unit tests - components
+11. 1h - Unit tests - store, actions
+12. 1h - Unit tests - repository
